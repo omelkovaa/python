@@ -1,0 +1,6 @@
+marks = input().split()
+count = len(marks)
+two = marks.count('2')
+print(marks)
+print(count)
+print((count - two) / count * 100)
