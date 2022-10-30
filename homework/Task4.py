@@ -5,17 +5,10 @@
 Формула определения ИМТ: index = weight / (height * height)
 """
 
-def imt(weight, height):
-    index = weight / (height*height)
-    return index
-
-res = imt(62, 1.7)
-
-def itog_imt():
-    if (res) < 18.5:
-        print("Недостаточный вес")
-    elif 18.5 < res < 25:
-        print("ИМТ в норме")
-    elif res >= 25:
-        print("Избыточный вес")
-itog_imt()
+def imt(weight,height):
+	return imtc(float(weight / (height * height)))
+def imtc(index):
+	if index < 18.5: return 'Недостаточный вес'
+	elif index >= 18.5 and index < 25: return 'ИМТ в норме'
+	elif index >= 25: return 'Избыточный вес'
+print(imt(int(input('Введите свой вес: ')),int(input('Введите свой рост: '))))

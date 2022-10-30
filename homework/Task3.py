@@ -9,14 +9,14 @@
 """
 
 def exam(students):
-    ocenka = {}
+    rating = {}
     for i in range(1, students + 1):
         mark = int(input("Введите полученную оценку студента " + f'{i}' + ': '))
-        ocenka[i] = mark
+        rating[i] = mark
 
 
-    for a in ocenka.keys():
-        if ocenka.get(a) >= 50:
+    for a in rating.keys():
+        if rating.get(a) >= 50:
             print("Студент номер", a, ', вы сдали экзамен')
         else:
             print("Студент номер", a, ", вы отчислены")
