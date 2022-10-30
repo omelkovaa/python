@@ -1,11 +1,23 @@
 """
-Создайте функцию которая принимает на вход 3 именованных параметра, выведите на печать значения этих параметров,
-но только в том случае если они не равны None.
+В быстрых шахматах на принятие решений для всех ходов игроку даётся 30 минут. Программа должна:
+Предлагать ввод хода (например, E2–E4) и считать потраченное время.
+После получения хода печатать оставшееся время в минутах.
+Если 30 минут закончились или игрок вводит «off» — завершать работу.
+Оформить в виде функции.
 """
-
-def task1(parameter1='ok', parameter2=1, parameter3=[1]):
-    if parameter1 and parameter2 and parameter3:
-        print(parameter1, parameter2, parameter3)
+from time import *
 
 
+def chess():
+    total = 1800
+    place = ''
+    while place != "off" and total >= 0:
+        start = time()
+        place = input()
+        end = time()
+        total = round(total - end + start, 2)
+        if total <= 0:
+            break
+        print(total)
 
+chess()
